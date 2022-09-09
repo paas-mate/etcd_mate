@@ -8,5 +8,5 @@ var (
 )
 
 func init() {
-	DeployType = gutil.GetEnvStr("DeployType", "stand-alone")
+	DeployType = gutil.GetEnvStr("DEPLOY_TYPE", "stand-alone")
 }

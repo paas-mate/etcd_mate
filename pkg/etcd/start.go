@@ -21,5 +21,9 @@ func startEtcd() {
 		stdout, stderr, err := gutil.CallScript(path.EtcdStartPseudoScript)
 		util.Logger().Info("output is ", zap.String("stdout", stdout), zap.String("stderr", stderr))
 		util.Logger().Error("run start prom scripts failed ", zap.Error(err))
+	} else if config.DeployType == "cluster" {
+		stdout, stderr, err := gutil.CallScript(path.EtcdStartClusterScript)
+		util.Logger().Info("output is ", zap.String("stdout", stdout), zap.String("stderr", stderr))
+		util.Logger().Error("run start prom scripts failed ", zap.Error(err))
 	}
 }
