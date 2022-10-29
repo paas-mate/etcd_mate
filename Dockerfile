@@ -12,4 +12,4 @@ COPY --from=build /opt/sh/compile/pkg/etcd_mate /opt/sh/etcd/mate/etcd_mate
 
 WORKDIR /opt/sh/etcd
 
-CMD ["/usr/bin/dumb-init", "bash", "-vx", "/opt/sh/etcd/mate/scripts/start.sh"]
+ENTRYPOINT ["/usr/bin/dumb-init", "bash", "-vx", "/opt/sh/etcd/mate/scripts/start.sh"]
